@@ -13,14 +13,14 @@ Some caveats are :
   4. I'll be updating it for sure later, because i've too many things on my plate right now.
   5. Pardon me for my horrible sense of humor (in code / output). 
 
-To use it you need to satisfy following requirements :- 
+To use it you need to satisfy following requirements :  
 python3+, 
 pip3 install requests, 
 pip3 install glob, 
 pip3 install ssl, 
 pip3 install beautifulsoup4, 
 
-To run it :- 
+To run it :  
 Just download the folder into your "Desktop" only (or you might want to resolve the realtive paths, though i've tried to keep it minimal). 
 Hit up your terminal / console and cd into your "Desktop". Please don't change the contents of the folders and file, unless you can fix the error that follows it. 
 Then run "python3 main.py the-sanfoundry-url-having-1000-in-it-goes-here". 
