@@ -1,5 +1,5 @@
 # sanfoundry-dl
-This script to extract all of the multiple choice questions found on "www.sanfoundry.com".
+This script helps to extract all of the multiple choice questions found on "www.sanfoundry.com".
 I've created this small python3 script that would help users on sanfoundry.com to extract all the MCQs.
 Some caveats are :-
   1. This script only captures pages from "sanfoudry.com" of format https://www.sanfoundry.com/1000-some-topics-questions-answers/.
