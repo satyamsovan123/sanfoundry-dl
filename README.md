@@ -18,7 +18,7 @@ python3+,
 pip3 install requests, 
 pip3 install glob, 
 pip3 install ssl, 
-pip3 install beautifulsoup4, 
+pip3 install beautifulsoup4  
 
 To run it :  
 Just download the folder into your "Desktop" only (or you might want to resolve the realtive paths, though i've tried to keep it minimal). 
