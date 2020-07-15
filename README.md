@@ -5,7 +5,6 @@ I've created this small python3 script that would help users on sanfoundry.com t
 My original approach was to convert this txt file to pdf, but wasn't able to get around. I'm still trying and upon any success, i would upload it for sure. 
 Some caveats are :  
   1. This script only captures pages from "sanfoudry.com" of format https://www.sanfoundry.com/1000-some-topics-questions-answers/
-  
   Examples are : https://www.sanfoundry.com/1000-electric-drives-questions-answers/ 
                  https://www.sanfoundry.com/1000-data-structures-algorithms-ii-questions-answers/ 
                  https://www.sanfoundry.com/1000-statistical-quality-control-questions-answers/ 
