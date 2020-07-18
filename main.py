@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os
 import sys
-from fpdf import FPDF 
 import glob
 import requests
 from web import *
