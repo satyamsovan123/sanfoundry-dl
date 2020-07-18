@@ -19,7 +19,7 @@ python3+,
 pip3 install requests, 
 pip3 install glob, 
 pip3 install ssl, 
-pip3 install beautifulsoup4  
+pip3 install beautifulsoup4,   
 pip3 install colorama
 
 To run it :  
