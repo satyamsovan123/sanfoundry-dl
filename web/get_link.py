@@ -6,6 +6,7 @@ import ssl
 import requests
 import certifi
 import os
+from colorama import *
 
 def get_link(url):
 	#page = urllib.request.urlopen("https://www.sanfoundry.com/1000-bioinformatics-questions-answers/")
@@ -46,6 +47,4 @@ def get_link(url):
 			file.write(link)
 			file.write("\n")
 	file.close()
-
-
 

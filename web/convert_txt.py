@@ -6,6 +6,7 @@ import ssl
 import requests
 import certifi
 import os
+from colorama import *
 
 def convert_txt():
 	#print(os.getcwd())
@@ -22,7 +23,8 @@ def convert_txt():
 	counter = 1
 	#URL = url_lst[67]
 	for URL in url_lst:
-		print("Parsing : " + str(counter) + "/" + str(len(url_lst)) + " ---> " + URL)
+		print(Fore.BLUE + "Parsing : " + str(counter) + "/" + str(len(url_lst)) + " ---> " + URL)
+		print(Style.RESET_ALL)
 		page = requests.get(URL , headers = headers)
 		soup = BeautifulSoup(page.content ,'html.parser')
 		counter += 1

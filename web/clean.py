@@ -6,6 +6,7 @@ import ssl
 import requests
 import certifi
 import os
+from colorama import *
 
 def clean():
 #fls = "bioinformatics-questions-answers-protein-motifs-domain-prediction.txt"
@@ -33,7 +34,8 @@ def clean():
 		ans_ls = []
 		exp_ls = []
 		fls = fold[i]
-		print("Cleaning ---> " + str(i) + " ---> " + fold[i])
+		print(Fore.BLUE + "Cleaning ---> " + str(i) + " ---> " + fold[i])
+		print(Style.RESET_ALL)
 		with open(fls , "r") as file:
 			for line in file:
 				cts_fl.append(line)
@@ -86,4 +88,3 @@ def clean():
 		f.close()
 
 		i += 1			
-
