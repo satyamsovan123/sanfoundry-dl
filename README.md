@@ -14,11 +14,12 @@ Some caveats are :
   5. Pardon me for my horrible sense of humor (in code / output). 
 
 To use it you need to satisfy following requirements :  
+(use pip for Windows and pip3 for macOS)
 python3+, 
 pip3 install requests, 
-pip3 install glob, 
 pip3 install ssl, 
-pip3 install beautifulsoup4  
+pip3 install beautifulsoup4,   
+pip3 install colorama
 
 To run it :  
 Just download the folder into your "Desktop" only (or you might want to resolve the realtive paths, though i've tried to keep it minimal). 
