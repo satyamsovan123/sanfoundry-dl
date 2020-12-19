@@ -9,12 +9,12 @@ Some caveats are :
                  https://www.sanfoundry.com/1000-data-structures-algorithms-ii-questions-answers/ 
                  https://www.sanfoundry.com/1000-statistical-quality-control-questions-answers/ 
   2. This script has few bugs, for dearth of my knowledge in "Web-Developement".
-  3. Any suggestions are welcome. I would love to know my mistakes. Feel free to fork, edit and branch.
+  3. Any suggestions are welcome. I would love to know my mistakes. Feel free to do anything.
   4. I'll be updating it for sure later, because i've too many things on my plate right now.
   5. Pardon me for my horrible sense of humor (in code / output). 
 
 To use it you need to satisfy following requirements :  
-(use pip for Windows and pip3 for macOS)
+pip/pip3,
 python3+, 
 pip3 install requests, 
 pip3 install ssl, 
