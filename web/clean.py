@@ -28,7 +28,6 @@ def clean():
 	i = 0
 	while(i < fold_len):
 
-		cts_fl = [] #cts_fl is contents of file in stored the list
 		ques_ls = []
 		opt_ls = []
 		ans_ls = []
@@ -37,45 +36,28 @@ def clean():
 		print(Fore.BLUE + "Cleaning ---> " + str(i) + " ---> " + fold[i])
 		print(Style.RESET_ALL)
 		with open(fls , "r") as file:
-			for line in file:
-				cts_fl.append(line)
-		file.close()
+			# total_content contains all the contents of the file
+			total_content = file.read()
 
-		for el in cts_fl:
-			ques = re.findall(r"^(\d\d?. .*)\n" , el)
-			if ques:
-				ques_ls.append(str(ques).replace("[" , "").replace("]" , "").replace("'" , ""))
-				continue
+		# regex to extract questions from the file
+		questions = re.findall(
+            	 r"^\d\d?\.([\w\W]*?\??)\n(?:a\)([\w\W]*?)\n)(?:b\)([\w\W]*?)\n)?(?:c\)([\w\W]*?)\n)?(?:d\)([\w\W]*?)\n)?(?:e\)([\w\W]*?)\n)?View Answer ?(Answer: *\w)\nExplanation: ?([\w\W]*?)\n\n", total_content, re.MULTILINE)
+        	for question_data in questions:
+            		question = question_data[0].strip().replace('advertisement', '')
+            		max_index = len(question_data)
+            		answer = question_data[-2].strip().replace('advertisement', '')
+			explanation = question_data[-1].strip().replace('advertisement', '')
+            		options = [question_data[i].strip().replace('advertisement', '') for i in range(
+                	 1, max_index - 2) if question_data[i] and question_data[i] != '']
+            		ques_ls.append(question)
+            		options_string = '\n'.join(
+                	 [chr(ord('A') + i) + '. ' + option for i, option in enumerate(options)])
+            		opt_ls.append(options_string)
+            		ans_ls.append(answer)
+			exp_ls.append(explanation)
 
-			opt = re.findall(r"^[   ]?(\(?[a-z]\) .*)\n" , el)
-			if opt:
-				opt_ls.append(str(opt).replace("[" , "").replace("]" , "").replace("'" , ""))
-				continue
-
-			ans = re.findall(r"^View Answer(Answer:  ?[a-z])\n" , el)
-			if ans:
-				ans_ls.append(str(ans).replace("[" , "").replace("]" , "").replace("'" , ""))
-				continue
-
-			exp = re.findall(r"^(Explanation.*)\n" , el)
-			if exp:
-				exp_ls.append(str(exp).replace("[" , "").replace("]" , "").replace("'" , ""))
-
-
-		temp_ls = []
-		str1 = ""  
-		for ele in opt_ls:
-			str1 = str1 + ele + " " 
-
-
-		str2 = str1.split("a) ")
-		if "" in str2:
-			str2.remove("")
-
-		for el in str2:
-			temp_ls.append("a) " + el)
-
-		final_ls = [i + "\n" + j + "\n" + k + "\n" + l +"\n" for i , j , k , l in zip(ques_ls , temp_ls , ans_ls , exp_ls)] 
+		
+		final_ls = [i + "\n" + j + "\n" + k + "\n" + l +"\n" for i , j , k , l in zip(ques_ls , opt_ls , ans_ls , exp_ls)] 
 
 
 		with open(fls , "w") as f:
