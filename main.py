@@ -35,9 +35,9 @@ def main():
 		os.remove("result.txt")
 
 	all_files = glob.glob("*.txt")
-	with open("result.txt" , "w") as result:
+	with open("result.txt" , "w", encoding="utf-8") as result:
 	    for file in all_files:
-	        for line in open(file , "r"):
+	        for line in open(file , "r", encoding="utf-8"):
 	            result.write(line)
 	        result.write("\n********************************END-OF-A-PAGE********************************\n")
 	    result.write("-----------------------------Best viewed in any Apple device------------------------------")

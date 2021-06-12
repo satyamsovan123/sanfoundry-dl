@@ -36,7 +36,7 @@ def clean():
 		fls = fold[i]
 		print(Fore.BLUE + "Cleaning ---> " + str(i) + " ---> " + fold[i])
 		print(Style.RESET_ALL)
-		with open(fls , "r") as file:
+		with open(fls , "r", encoding="utf-8") as file:
 			for line in file:
 				cts_fl.append(line)
 		file.close()
@@ -78,7 +78,7 @@ def clean():
 		final_ls = [i + "\n" + j + "\n" + k + "\n" + l +"\n" for i , j , k , l in zip(ques_ls , temp_ls , ans_ls , exp_ls)] 
 
 
-		with open(fls , "w") as f:
+		with open(fls , "w", encoding="utf-8") as f:
 			for elem in final_ls:
 				f.write("\n")
 				f.write(elem)
