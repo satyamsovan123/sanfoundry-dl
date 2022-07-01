@@ -1,7 +1,7 @@
 # sanfoundry-dl
 
 This small python app helps to extract all of the multiple choice questions found on "www.sanfoundry.com". This version is better than the first version (v1) in many ways.
-<em>sanfoundry-dl v2 now supports standalone URLs as well! It's faster and less error prone (upto 40%). This version also uses a real user interface instead of boring terminal/console/shell/command_prompt! It handles all errors and even defaults back to old format if required.<em>
+<em>sanfoundry-dl v2 now supports standalone URLs as well! It's faster and less error prone (upto 40%). This version also uses a real user interface instead of boring terminal/console/shell/command_prompt! It handles all errors and even defaults back to old format if required.</em>
 
 To use this app, you must have python3+, Google Chrome installed on your computer, and ofcourse a clone of this repository.
 Open your terminal/console/shell/command_prompt and change directory to the project's cloned folder and install all requirements using this command: <b>pip install -r requirements.txt<b>
