@@ -7,7 +7,7 @@ To use this app, you must have python3+, Google Chrome installed on your compute
 Open your terminal/console/shell/command_prompt and change directory to the project's cloned folder and install ll requirements using this command: <b>pip install -r requirements.txt<b>
 
 As, this project now uses selenium, so you might need to add ChromeDriver to this location: <b>/Desktop/sanfoundry-dl/api/main/helpers/drivers/chromedriver</b>.
-Here is the link to download ChromeDriver: <a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a> Also, it's important that you must download the same version of ChromeDriver as your Google Chrome browser.
+Here is the link to download ChromeDriver: <a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a>. Also, it's important that you must download the same version of ChromeDriver as your Google Chrome browser.
 
 So, for example, if you are using Windows PC and you have cloned the project to your desktop, you need to copy chromedriver_with_same_version_as_chrome_for_windows.exe to this folder path "Desktop/sanfoundry-dl/api/main/helpers/drivers/"
 
