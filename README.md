@@ -11,6 +11,6 @@ Here is the link to download ChromeDriver: <a href="https://chromedriver.chromiu
 
 So, for example, if you are using Windows PC and you have cloned the project to your desktop, you need to copy chromedriver_with_same_version_as_chrome_for_windows.exe to this folder path "Desktop/sanfoundry-dl/api/main/helpers/drivers/"
 
-And, the last step is to run this in your terminal/console/shell/command_prompt: <b>python3 main.py</b> or <b>python main.py</b>
+And, the last step is to run this in your terminal/console/shell/command_prompt: <b>python3 main.py</b> or <b>python main.py</b>. Now you can access the app using a "real" user interface. To do that open any browser and go to <a href="[https://chromedriver.chromium.org/downloads](http://127.0.0.1:5000/scrap)">http://127.0.0.1:5000/scrap</a> and enter a valid URL. It will take some time and it will who you to download the PDF file. Alternatively, you can keep checking the output folder for any changes and see your final file there. It might take sometime (even much longer) or you might encouonter some bug here and there. Just say hi to them (Just kidding!). So, try again and keep checking the output folder.
 
 Thanks for checking this project. Feel free to contribute and contact for anything.
