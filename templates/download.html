@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      body {
+        background-color: #6a9ac4;
+      }
+
+      #main {
+        background-color: #6a9ac4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main-box {
+        width: clamp(100px, 90%, 1000px);
+        margin: 80px 50px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .main-heading,
+      .main-form {
+        width: 50%;
+        padding: 8% 5% 10% 5%;
+      }
+
+      .main-heading {
+        background-color: #1f2e43;
+        background: radial-gradient(
+            circle at 55% 92%,
+            #426691 0 5%,
+            transparent 22.2%
+          ),
+          radial-gradient(circle at 94% 72%, #426691 0 6%, transparent 20.2%),
+          radial-gradient(circle at 0% 0%, #426691 0 30%, transparent 40.2%),
+          #1f2e43;
+        border-radius: 10px 0 0 10px;
+      }
+
+      .footer-description {
+        font-family: sans-serif;
+        color: #1f2e43;
+        font-size: 20px;
+        text-align: center;
+        padding: 0px 25px;
+      }
+      .warning {
+        font-family: sans-serif;
+        color: #1f2e43;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .main-form {
+        background-color: #ffffff8f;
+        border-radius: 0 10px 10px 0;
+      }
+
+      @media only screen and (max-width: 800px) {
+        .main-heading,
+        .main-form {
+          width: 100%;
+        }
+
+        .main-heading {
+          border-radius: 10px 10px 0 0;
+        }
+
+        .main-form {
+          border-radius: 0 0 10px 10px;
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .main-box {
+          width: 95%;
+          margin: 8% 5%;
+        }
+      }
+
+      h2 {
+        font-family: sans-serif;
+        color: #fff;
+        font-size: clamp(25px, 5vw, 50px);
+        letter-spacing: 2px;
+        text-align: center;
+        transform: scale(0.95, 1);
+      }
+
+      .form-item {
+        position: relative;
+      }
+
+      label,
+      input,
+      textarea {
+        font-family: sans-serif;
+      }
+
+      label {
+        position: absolute;
+        top: 10px;
+        left: 2%;
+        color: #999;
+        font-size: clamp(14px, 1.5vw, 18px);
+        pointer-events: none;
+        user-select: none;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        outline: 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        padding: 12px;
+        font-size: clamp(15px, 1.5vw, 18px);
+      }
+
+      input:focus + label,
+      input:valid + label,
+      textarea:focus + label,
+      textarea:valid + label {
+        font-size: clamp(13px, 1.3vw, 16px);
+        color: #777;
+        top: -20px;
+        transition: all 0.225s ease;
+      }
+
+      .submit-btn {
+        background-color: #426691;
+        filter: drop-shadow(2px 2px 3px #0003);
+        color: #fff;
+        font-family: sans-serif;
+        font-size: clamp(16px, 1.6vw, 18px);
+        display: block;
+        padding: 12px 20px;
+        margin: 2px auto;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+        transition: 0.2s;
+      }
+
+      .submit-btn:hover {
+        transform: scale(1, 1);
+        filter: drop-shadow(4px 4px 4px #0003);
+      }
+
+      .submit-btn:active {
+        transform: scale(1.1, 1.1);
+        filter: sepia(0.5);
+      }
+
+      @media only screen and (max-width: 800px) {
+        h2 {
+          font-size: clamp(40px, 6vw, 50px);
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        h2 {
+          font-size: clamp(30px, 12vw, 60px);
+        }
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📚 sanfoundry-dl - download</title>
+  </head>
+  <body>
+    <section id="main">
+      <div class="main-box">
+        <div class="main-heading">
+          <h2>sanfoundry-dl</h2>
+        </div>
+        <div class="main-form">
+          <form action="/download_pdf">
+            <button download class="submit-btn">
+              <a>Download PDF</a>
+            </button>
+          </form>
+          <p class="warning">
+            Check the output folder, and incase of any errors and checkout for
+            those warning signs in the PDF.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-description">
+      Thanks for using sanfoundry-dl. This little project is free and will
+      always be free forever. Feel free to contribute.
+      <br />
+      <br />
+
+      <b>P.S.</b> This is still an early release of sanfoundry-dl v2. So, if you
+      encounter any problems while using it, try it again, and also try checking
+      the output folder. For some URLs it might take a very long time to produce
+      results. To keep track, check the output folder.
+      <em><q>Patience is the greatest of all virtues.</q> ~ Cato the Elder</em>
+    </footer>
+  </body>
+</html>
