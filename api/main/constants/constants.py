@@ -3,6 +3,7 @@ These are the constants that are used through out the entire app.
 """
 constants = {
     "SANFOUNDRY_WEBSITE": "http://www.sanfoundry.com",
+    "API_VERSION": "/api/v2/",
     "FOLDER_NAME" : "output",
     "ERROR_GETTING_DATA" : "Error getting data",
     "ERROR_GETTING_LINKS" : "Error getting links",

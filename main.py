@@ -50,6 +50,33 @@ def scrap():
         return render_template('error.html')
 
 """
+This route handles the POST and GET for the main scrap route, this returns JSON instead of webpages
+"""
+@app.route(constants["API_VERSION"] + 'scrap', methods=['POST'])
+def api_scrap():
+    data = check_network()
+    if(data == constants["NO_INTERNET_CONNECTION"]):
+        return jsonify({"data": data})
+
+    try:
+        if(request.form['url']):
+            url = request.form['url']
+            data, contents = main_scrap(url)
+            if(len(contents) != 0 or data == constants["DATA"]):
+                return jsonify({"data": data, "contents": contents})
+            else:
+                data = constants["UNABLE_TO_SCRAP"]
+                return jsonify({"data": data, "contents": contents})
+        else:
+            data = constants["INVALID_URL"]
+            contents = []
+            return jsonify({"data": data, "contents": contents})
+    except:
+        data = constants["UNABLE_TO_SCRAP"]
+        contents = []
+        return jsonify({"data": data, "contents": contents})
+
+"""
 This route handles the error and the invalid routes
 """
 @app.errorhandler(404)
