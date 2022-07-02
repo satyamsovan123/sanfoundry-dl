@@ -33,11 +33,17 @@ def get_questions_answers(url):
         options.add_argument("--window-size = 1920, 1080")
         options.add_argument("--no-sandbox")
         options.add_argument(f'user-agent={user_agent}')
+
+        # These are for manual driver locations
         # chrome_driver_location = Service(r"api/main/helpers/drivers/chromedriver")
         # browser = webdriver.Chrome(options = options, service = chrome_driver_location)
-        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        browser = webdriver.Chrome(executable_path = os.environ.get("CHROMEDRIVER_PATH"), chrome_options = options)
-        # browser = webdriver.Chrome(options = options, service = ChromeDriverManager().install())
+
+        # These are for automatic driver locations (for Heroku)
+        # chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        # browser = webdriver.Chrome(executable_path = os.environ.get("CHROMEDRIVER_PATH"), chrome_options = options)
+
+        # This is for automatic driver locations
+        browser = webdriver.Chrome(options = options, service = ChromeDriverManager().install())
         time.sleep(3)
         browser.get(url)
 
