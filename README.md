@@ -12,4 +12,6 @@ So, for example, if you are using Windows PC and you have cloned the project to 
 
 And, the last step is to run this in your terminal/console/shell/command_prompt: <b>python3 main.py</b> or <b>python main.py</b>. Now you can access the app using a "real" user interface (web). To do that open any browser and go to <a href="[https://chromedriver.chromium.org/downloads](http://127.0.0.1:5000/scrap)">http://127.0.0.1:5000/scrap</a> and enter a valid URL. It will take some time and it will download the PDF file. Alternatively, you can either keep checking the output folder for any changes and see your final file there, or you can check your terminal/console/shell/command_prompt for any progress. It might take sometime (even much longer) or you might encounter some bug here and there. Just say hi to them (Just kidding!). So, try again and keep checking the output folder.
 
+If you want to use this as an API, then you can use a POST endpoint with http://127.0.0.1:5000/api/v2/scrap and send a valid URL in the body.
+
 Thanks for checking this project. Feel free to contribute and contact for anything.
