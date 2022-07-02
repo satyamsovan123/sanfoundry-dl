@@ -7,12 +7,9 @@ import random
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service 
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait     
-from selenium.webdriver.common.by import By    
 
 """
 This function is the core of this entire app. This function takes a URL as input and checks it.
@@ -34,8 +31,9 @@ def get_questions_answers(url):
         options.add_argument("--window-size = 1920, 1080")
         options.add_argument("--no-sandbox")
         options.add_argument(f'user-agent={user_agent}')
-        chrome_driver_location = Service(r"api/main/helpers/drivers/chromedriver")
-        browser = webdriver.Chrome(options = options, service = chrome_driver_location)
+        # chrome_driver_location = Service(r"api/main/helpers/drivers/chromedriver")
+        # browser = webdriver.Chrome(options = options, service = chrome_driver_location)
+        browser = webdriver.Chrome(options = options, service = ChromeDriverManager().install())
         time.sleep(3)
         browser.get(url)
 
