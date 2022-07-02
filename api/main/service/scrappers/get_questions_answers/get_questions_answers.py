@@ -3,6 +3,7 @@ from api.main.helpers.debugger_alert.debugger_alert import debugger_alert
 import re
 import time
 import random
+import os
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -10,6 +11,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+chrome_options = webdriver.ChromeOptions()
 
 """
 This function is the core of this entire app. This function takes a URL as input and checks it.
@@ -33,7 +35,9 @@ def get_questions_answers(url):
         options.add_argument(f'user-agent={user_agent}')
         # chrome_driver_location = Service(r"api/main/helpers/drivers/chromedriver")
         # browser = webdriver.Chrome(options = options, service = chrome_driver_location)
-        browser = webdriver.Chrome(options = options, service = ChromeDriverManager().install())
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        browser = webdriver.Chrome(executable_path = os.environ.get("CHROMEDRIVER_PATH"), chrome_options = options)
+        # browser = webdriver.Chrome(options = options, service = ChromeDriverManager().install())
         time.sleep(3)
         browser.get(url)
 
