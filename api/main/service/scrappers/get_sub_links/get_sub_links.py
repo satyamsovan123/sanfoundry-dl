@@ -18,7 +18,6 @@ def get_sub_links(url):
         return (data, all_sub_links)
     data = constants["DATA"]
     try:
-        # time.sleep(random.randint(2, 6))
         session = requests.session()
         session.headers.update({'User-Agent': constants["user_agent_list"][random.randint(0, len(constants["user_agent_list"]))]})
         info = session.get(url)
