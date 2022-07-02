@@ -32,7 +32,6 @@ def scrap():
     data = check_network()
     if(data == constants["NO_INTERNET_CONNECTION"]):
         return render_template('error.html', data = data)
-
     if (request.method) == 'GET':
         return render_template('index.html')
     elif (request.method) == 'POST':
