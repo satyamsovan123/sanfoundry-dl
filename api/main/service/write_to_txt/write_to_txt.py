@@ -8,9 +8,6 @@ If the length of list of question doesn't matches the length of list of answers,
 """
 def write_to_txt(all_items, data_mismatch, url):
     data = constants["UNABLE_TO_WRITE_TO_FILE"]
-    # print(os.getcwd())
-    # print(current_folders)
-
     if(len(all_items) == 0):
         return data
     try:

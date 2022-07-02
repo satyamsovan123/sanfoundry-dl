@@ -83,11 +83,8 @@ def get_questions_answers(url):
                 temp_p = question_soup.find("p")
                 temp_a = question_soup.find("a")
                 if(temp_p):
-                    # print("*********")
                     question_with_image = question_with_image + temp_p.get_text()
-                    # print(temp_p.get_text())
                 if(temp_a):
-                    # print("*********")
                     url_regex = r"[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#\?&\/\/=]*)"
                     all_links_in_question = re.findall(url_regex, str(temp_a))
                     all_links_in_question = [constants["SANFOUNDRY_WEBSITE"] + link + "\n" for link in all_links_in_question]
@@ -99,16 +96,10 @@ def get_questions_answers(url):
                 else:
                     all_questions.append("\n" + question + "\n")
 
-                    # print(all_links_in_question)
-                # print(question)
                 if(question_with_image):
                     all_questions.append("\n" + question_with_image + "\n")
             else:
-                # print("&&&&&&&&&&&&&&")
-                # print(question)
                 all_questions.append(question)
-        #debugger_alert(all_questions, "Success")
-        # print(Style.RESET_ALL)
         print("____GOT ALL QUESTIONS____")
 
         all_answers = []
@@ -127,14 +118,10 @@ def get_questions_answers(url):
             answer = total_answer[0][:-1]
             explanation = "Explanation" + total_answer[1]
             all_answers.append({"answer": answer, "explanation": explanation})
-        #debugger_alert(all_answers, "Success")
-        # print(Style.RESET_ALL)
         print("____GOT ALL ANSWERS____")
         
         contents = [all_questions, all_answers]
-        # debugger_alert(contents, "Success")
-        # print(Style.RESET_ALL)
-
+        print(contents)
         return (data, contents)
 
     except:

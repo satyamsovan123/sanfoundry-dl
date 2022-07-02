@@ -64,8 +64,6 @@ def scrap(url):
             data_mismatch = True
         write_to_txt(all_items, data_mismatch, url)
 
-        # debugger_alert(data, "Success")
-        # return data, contents
         total_contents = all_items
     
     elif(url_type == constants["TYPE_A_URL"]):
@@ -77,17 +75,14 @@ def scrap(url):
         for url in all_sub_links:
             print(str(index) + " of " + str(len(all_sub_links)))
             data, contents = get_questions_answers(url)
-            # total_contents.append(contents)
             index += 1
             if(len(contents) == 0):
                 data = str(index) + " " + constants["UNABLE_TO_SCRAP_PAGE"] + " : " + url
                 not_scrapped_urls.append(url)
                 debugger_alert(data, "Error")
                 continue
-                # return data, contents
 
             message, all_items = sanitize_list(contents[0], contents[1])
-            # print(all_items)
             data_mismatch = False
             if(message == constants["DATA_MISMATCH_WARNING"]):
                 data_mismatch = True
