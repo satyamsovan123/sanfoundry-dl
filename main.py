@@ -1,3 +1,4 @@
+from flask import Flask
 from flask import *
 from api.main.constants.constants import constants
 
