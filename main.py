@@ -58,5 +58,5 @@ def error(error):
 """
 This function serves as the main entry point for the entire app.
 """
-if __name__ == "__main__":
+if __name__ == "__main__": 
     app.run(debug = True)
