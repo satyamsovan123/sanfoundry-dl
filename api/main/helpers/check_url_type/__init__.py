@@ -1,1 +1,0 @@
-__all__ = ["check_url_type"]

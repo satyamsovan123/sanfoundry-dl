@@ -1,1 +1,0 @@
-__all__ = ["write_to_txt"]
