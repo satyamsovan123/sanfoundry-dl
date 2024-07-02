@@ -17,7 +17,7 @@ This function starts the scrapper by checking the URL and calling the necessary 
 def start_scrapper(url):
     # Check if the URL is valid
     if not re.match(r"(https?://)?(www\.)?sanfoundry\.com(/.*|#.*)?", url):
-        logger(f"Invalid URL. Please enter a valid URL.")
+        logger(f"Invalid URL")
         return constants["INVALID_URL"]
     
     logger(f"Starting the scrapping for the URL - {url}")

@@ -94,7 +94,7 @@ def maximize_window(browser):
 This function makes the bot humane by scrolling to the bottom, scrolling to the top, and maximizing the window randomly.
 """
 def __make_it_humane(browser):
-    logger("Making the bot humane")
+    logger(f"Making the bot humane")
     try:
         actions = ["scroll_to_bottom", "scroll_to_top", "maximize_window"]
         random.shuffle(actions) 
