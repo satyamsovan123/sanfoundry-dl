@@ -1,0 +1,11 @@
+[] Remove .DS_Store files
+[x] Add try / execpt blocks
+[] Make executables for macOS, Linux, Windows
+[] Provide options in UI for both extractting information using screenshot method 
+[] Provide options in UI for both extractting information using HTML text method
+[] Add suppport for creating PDF
+[] Add Docker support
+[x] Add custom created icons
+[] Take care of paths
+[] Remove unncessary codes
+[] Delete the repo 😢

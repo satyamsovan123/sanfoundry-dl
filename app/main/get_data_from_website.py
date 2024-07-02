@@ -15,6 +15,9 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from ..services.logger import logger
+from ..constants import constants
+from ..services.get_path import get_output_path
+path = get_output_path()
 
 """ 
 This function generates a random user agent.
@@ -38,14 +41,14 @@ This function generates a random timeout of medium duration.
 """
 def __get_random_medium_timeout():
     medium_timeout = random.randint(4, 7)
-    return 1
+    return medium_timeout
  
 """ 
 This function generates a random timeout of small duration.
 """
 def __get_random_small_timeout():
     small_timeout = random.randint(1, 2)
-    return 1
+    return small_timeout
 
 """ 
 This function scrolls to the bottom of the page randomly.
@@ -167,7 +170,8 @@ def get_all_questions_and_answers_from_website(website):
         for index, paragraph_tag in enumerate(paragraph_tags):
             logger(f"Finding question {index}")
             # Take a screenshot of the question
-            paragraph_tag.screenshot(os.path.join("output", f"question_{index}.png"))
+            # paragraph_tag.screenshot(os.path.join(constants["OUTPUT_FOLDER"], f"question_{index}.png"))
+            paragraph_tag.screenshot(os.path.join(path, f"question_{index}.png"))
 
             try:
                 logger(f"Finding answer {index}")
@@ -183,7 +187,9 @@ def get_all_questions_and_answers_from_website(website):
                 span_answer = browser.find_element(By.ID, span_answer_id)
 
                 # Take a screenshot of the answer
-                span_answer.screenshot(os.path.join("output", f"answer_{index}.png"))
+                # span_answer.screenshot(os.path.join(constants["OUTPUT_FOLDER"], f"answer_{index}.png"))
+                print(os.path.join(path, f"answer_{index}.png"))
+                span_answer.screenshot(os.path.join(path, f"answer_{index}.png"))
                 
             except Exception as exception:
                 logger(f"No answer found - {exception}")
