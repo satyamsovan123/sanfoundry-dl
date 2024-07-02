@@ -1,4 +1,4 @@
-[] Remove .DS_Store files
+[x] Remove .DS_Store files
 [x] Add try / execpt blocks
 [] Make executables for macOS, Linux, Windows
 [] Provide options in UI for both extractting information using screenshot method 

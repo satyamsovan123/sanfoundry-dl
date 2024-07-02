@@ -18,6 +18,7 @@ from ..services.logger import logger
 from ..constants import constants
 from ..services.get_path import get_output_path
 path = get_output_path()
+logger(f"Path - {os.path.join(path)}")
 
 """ 
 This function generates a random user agent.
@@ -187,8 +188,6 @@ def get_all_questions_and_answers_from_website(website):
                 span_answer = browser.find_element(By.ID, span_answer_id)
 
                 # Take a screenshot of the answer
-                # span_answer.screenshot(os.path.join(constants["OUTPUT_FOLDER"], f"answer_{index}.png"))
-                print(os.path.join(path, f"answer_{index}.png"))
                 span_answer.screenshot(os.path.join(path, f"answer_{index}.png"))
                 
             except Exception as exception:

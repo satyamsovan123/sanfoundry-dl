@@ -14,6 +14,6 @@ def clean_up():
         # Remove the output directory and its contents
         if os.path.exists(os.path.join(path)):
             shutil.rmtree(os.path.join(path))
-
+        
     except Exception as exception:
         logger(f"An error occured while cleaning up the output directory - {exception}")

@@ -17,7 +17,7 @@ sanfoundry-dl-output/
 .Python
 build/
 develop-eggs/
-dist/
+# dist/
 downloads/
 eggs/
 .eggs/
