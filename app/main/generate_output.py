@@ -62,3 +62,5 @@ def generate_image_output(folder):
 
     except Exception as exception:
         logger(f"An error occured while creating the image output - {exception}")
+
+

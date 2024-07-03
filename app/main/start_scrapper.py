@@ -1,7 +1,7 @@
 from ..constants import constants
 from datetime import datetime
 from .create_folders import create_folders
-from .get_data_from_website import get_all_questions_and_answers_from_website
+from .get_data_from_website import get_all_questions_and_answers_from_website_by_taking_screenshots, get_all_questions_and_answers_from_website_by_text_v1, get_all_questions_and_answers_from_website_by_text_v2
 from .generate_output import generate_image_output
 from ..services.logger import logger
 import os
@@ -20,7 +20,7 @@ def start_scrapper(url):
         logger(f"Invalid URL")
         return constants["INVALID_URL"]
     
-    logger(f"Starting the scrapping for the URL - {url}")
+    logger(f"Scrapping URL - {url}")
     
     # https://www.sanfoundry.com/quantitative-aptitude-questions-answers/
     # Check if the website has only questions and answers
@@ -42,24 +42,26 @@ def start_scrapper(url):
     start_time = datetime.now() 
 
     # Get all the questions and answers from the website
-    get_all_questions_and_answers_from_website(url)
-
-    # Generate the final image output
-    generate_image_output(os.path.join(path))
+    # get_all_questions_and_answers_from_website_by_taking_screenshots(url)
+    # get_all_questions_and_answers_from_website_by_text_v1(url)
+    get_all_questions_and_answers_from_website_by_text_v2(url)
+    return "Okay!!!!"
+    # # Generate the final image output
+    # generate_image_output(os.path.join(path))
     
-    message = f"Successfully scrapped the website. Please check the your desktop folder for the final image."
+    # message = f"Successfully scrapped the website. Please check the your desktop folder for the final image."
 
-    # Check if the final image is generated
-    if not os.path.exists(os.path.join(path) + "/final_image_output.jpeg"):
-        message = "An error occured while scrapping the website. Please try again."
+    # # Check if the final image is generated
+    # if not os.path.exists(os.path.join(path) + "/final_image_output.jpeg"):
+    #     message = "An error occured while scrapping the website. Please try again."
 
-    # Copy the final image to the desktop
-    copy_final_output_to_desktop(os.path.join(path) + "/final_image_output.jpeg")
+    # # Copy the final image to the desktop
+    # copy_final_output_to_desktop(os.path.join(path) + "/final_image_output.jpeg")
 
-    # Clean up the "sanfoundry-dl-output" directory
-    clean_up()
-    end_time = datetime.now()
+    # # Clean up the "sanfoundry-dl-output" directory
+    # clean_up()
+    # end_time = datetime.now()
 
-    logger(f"Time taken to scrap the website - {end_time - start_time}")
-    return message 
+    # logger(f"Time taken to scrap the website - {end_time - start_time}")
+    # return message 
 
